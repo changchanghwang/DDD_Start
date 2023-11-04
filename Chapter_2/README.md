@@ -50,3 +50,20 @@ class CalculateDiscountService {
 ```
 
 여기서 ruleDiscounter가 어디에 의존하는지는 모르고 그냥 RuleDiscounter가 룰을 적용한다는 사실만 알 수 있다.
+
+## 도메인 영역의 주요 구성요소
+
+- 엔티티 (Entity)
+  - 고유의 식별자를 갖는 객체, 자신의 라이프 사이클을 갖는다.
+  - ex) Order
+- 벨류 (Value)
+  - 식별자를 갖지 않는 개체로 주로 개념적으로 하나인 값을 표현할 때 사용된다.
+  - ex) Money
+- 애그리거트 (Aggregate)
+  - 관련된 객체를 하나의 군으로 묶은 것
+  - ex) Order, OrderLine 등을 '주문' 애그리거트라고 할 수 있다.
+- 레포지터리 (Repository)
+  - 도메인 영속성을 처리한다.
+- 서비스 (Domain Service)
+  - 특정 엔티티에 속하지 않은 도메인 로직ㅇ르 제공한다.
+  - 도메인 로직이 여러 엔티티와 밸류를 필요로 하면 도메인 서비스에서 로직을 구현한다.
